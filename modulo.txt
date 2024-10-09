@@ -1,0 +1,27 @@
+@startuml
+
+class Banco{
+String nombre;
+String pais;
+int numeroSucursales;
+int numeroClientes;
+}
+
+class CuentaBancaria{
+String numeroCuenta;
+String tipoCuenta;
+double saldoCuenta;
+}
+
+class Cliente{
+String nombre; 
+String edad; 
+String tipoCuenta;
+}
+
+Banco "1" -- "*" CuentaBancaria : generar
+Banco "1" -- "*" Cliente : pertenecer
+Cliente "1" -- "*" CuentaBancaria : poseer
+
+
+@enduml
